@@ -1,4 +1,4 @@
-// File: multi-target-orchestrator.js
+// File: orchestrator.js
 /** @param {NS} ns **/
 export async function main(ns) {
     const scriptPaths = {
@@ -13,7 +13,8 @@ export async function main(ns) {
 
     while (true) {
         const allServers = discoverServers(ns);
-        const rooted = allServers.filter(s => ns.hasRootAccess(s));
+        const purchasedServers = ns.getPurchasedServers();
+        const rooted = allServers.filter(s => ns.hasRootAccess(s) || purchasedServers.includes(s));
         const hackableTargets = selectHackableTargets(ns, rooted, 10).slice(0, maxTargets);
         const runners = rooted.filter(s => ns.getServerMaxRam(s) > 0);
 
@@ -33,7 +34,7 @@ export async function main(ns) {
 
         let targetIndex = 0;
         while (getTotalFreeRam(ramMap) >= Math.min(...targetPlans.map(p => p.totalBatchRam))) {
-            const { target, plan, totalBatchRam } = targetPlans[targetIndex % targetPlans.length];
+            const { target, plan } = targetPlans[targetIndex % targetPlans.length];
             const success = await runBatch(ns, target, plan, ramMap, scriptPaths, batchDelay);
             if (!success) break;
             targetIndex++;
@@ -134,4 +135,3 @@ async function runBatch(ns, target, plan, ramMap, scripts, buffer) {
     }
     return true;
 }
-
