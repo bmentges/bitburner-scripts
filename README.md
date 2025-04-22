@@ -19,9 +19,9 @@ Author: Bruno Mentges
 Bitburner-scripts/
 ├── orchestrator.js  
 └── scripts/
-    ├── hack.js  
-    ├── grow.js  
-    └── weaken.js
+....├── hack.js  
+....├── grow.js  
+....└── weaken.js
 
 ## Usage
 
