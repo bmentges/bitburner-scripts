@@ -50,6 +50,7 @@ Under `other/` directory:
 - *breach-all.js*: Gain root on all servers using available port openers
 - *shutdown-all.js*: Kills all scripts running across all servers
 - *buy-max-server.js*: Buys one server with maximum GB possible, recommend having 30b+
+- *xp-farm-loop*: runs `xp-weaken.js` against the weakest possible target to farm Hack exp quickly
 
 ## License
 
