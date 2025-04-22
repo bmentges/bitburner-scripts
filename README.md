@@ -16,12 +16,14 @@ Author: Bruno Mentges
 
 ## Folder Structure
 
+```text
 Bitburner-scripts/
-├── orchestrator.js  
+├── orchestrator.js
 └── scripts/
-....├── hack.js  
-....├── grow.js  
-....└── weaken.js
+    ├── hack.js
+    ├── grow.js
+    └── weaken.js
+```
 
 ## Usage
 
