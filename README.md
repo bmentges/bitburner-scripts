@@ -51,6 +51,7 @@ Under `other/` directory:
 - *shutdown-all.js*: Kills all scripts running across all servers
 - *buy-max-server.js*: Buys one server with maximum GB possible, recommend having 30b+
 - *xp-farm-loop*: runs `xp-weaken.js` against the weakest possible target to farm Hack exp quickly
+- *trader.js*: runs a profit trading strategy to generate money from the stock market
 
 ## License
 
